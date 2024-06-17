@@ -53,7 +53,6 @@ const clienteCinco = new Cliente ("Carlos Eduardo", 38, "Caxias do Sul", "17/05/
 //carrinho está vazio pois pedimos ao cliente que adicione os itens que deseja 
 
 
-
 let carrinho = []; 
 let item;
 
@@ -74,15 +73,14 @@ function adicionar() {
     } while (item !== 0);
 
     carrinho.splice(carrinho.length - 1, 1)
-
+    console.log("Esses são os itens no seu carrinho de compras: ")
     for (const item of carrinho) {
         if (item !== 0) {
-            console.log(item)
-        }
-    }
-    return carrinho
-    
+            console.log(item.sabor +" R$ "+ item.preco)
+        }};
+        totalCarrinho(carrinho)
 }
+
 
 
 //Função deletar desenvolvida pelo Gustavo Ferracioli - funcionando
@@ -100,6 +98,21 @@ function deletar() {
     }
     console.log("Itens no carrinho após a remoção:")
         for (const item of carrinho) {
-            console.log(item)
-        }
+            console.log(item.sabor +" R$ "+ item.preco)
+    }
+
+    totalCarrinho(carrinho)
+
 }
+
+
+//desenvolvido em conjunto com o Gustavo Italo
+//Pega os precos dos itens na lista do carrinho e soma. Utilizada na função de adicionar e na de deletar.
+function totalCarrinho(objeto) {
+    const total = objeto.reduce((acumulador, valorAtual) => {
+            return acumulador += valorAtual.preco
+        }, 0);
+    console.log("Valor total: R$ " + total.toFixed(2));
+}
+
+
