@@ -45,6 +45,15 @@ class Refrigerante {
   }
 }
 
+const cocaCola = new Refrigerante ("Coca Cola", "Canela", 7.50, 2);
+const guaranaAntarctica = new Refrigerante ("Guaraná Antarctica", "Guaraná", 8.00, 2);
+const pepsi = new Refrigerante ("Pepsi", "Canela", 7.70, 2);
+const fantaUva = new Refrigerante ("Fanta", "Uva", 7.00, 2);
+const fantaLaranja = new Refrigerante ("Fanta", "Laranja", 7.00, 2);
+const sprite = new Refrigerante ("Sprite", "Limão", 5.00, 2);
+const kuat = new Refrigerante ("Kuat", "Guaraná", 5.50, 2);
+
+
 class Agua {
   constructor (marca, sabor, preco, peso) {
     this.marca = marca;
@@ -53,6 +62,44 @@ class Agua {
     this.peso = peso;
   }
 }
+
+const crystal = new Agua ("Crystal", "Mineral", 2.00, 350);
+const ibira = new Agua ("Ibirá", "Mineral", 1.50, 350);
+const minalba = new Agua ("Minalba", "Mineral", 1.65, 350);
+const cristal = new Agua ("Cristal", "Água com gás", 2.50, 350);
+const bioleve = new Agua ("Bioleve", "Água com gás", 2.75, 350);
+
+
+const bebidasDisponiveis = [
+  new Cerveja ("Brahma", "Brasil", "Pilsen", 3.10, 350),
+  new Cerveja ("Brahma", "Brasil", "Pilsen", 4.79, 355),
+  new Cerveja ("Corona", "México", "American Lager", 5.99, 330),
+  new Cerveja ("Artarctica", "Brasil", "Pilsen", 3.10, 350),
+  new Cerveja ("Antarctica", "Brasil", "Pilsen", 4.79, 355),
+  new Cerveja ("Spaten", "Alemanha", "Munich Helles", 5.99, 355),
+  new Cerveja ("Spaten", "Alemanha", "Munich Helles", 8.89, 600),
+  new Vinho ("Chac Chac", "Argentina", "Tinto Malbec", 40.99, 750),
+  new Vinho ("Chac Chac", "Argentina", "Sauvignon Blanc", 40.99, 750),
+  new Vinho ("Trapiche", "Argentina", "Tinto Merlot", 51.99, 750),
+  new Vinho ("Periquita", "Portugal", "Rosé Touriga Nacional", 69.99, 750),
+  new Vinho ("Periquita", "Portugal", "Tinto Seco", 79.99, 750),
+  new Vinho ("Concha Y Toro", "Chile", "Tinto Carménère Reservado", 35.99, 750),
+  new Vinho ("Santa Helena", "Chile", "Rosé Reservado Cabernet Sauvignon", 41.19, 750),
+  new Vinho ("Salton", "Brasil", "Espumante Brut", 43.99, 750),
+  new Vinho ("Salton", "Brasil", "Espumante Moscatel", 43.99, 750),
+  new Refrigerante ("Coca Cola", "Canela", 7.50, 2),
+  new Refrigerante ("Guaraná Antarctica", "Guaraná", 8.00, 2),
+  new Refrigerante ("Pepsi", "Canela", 7.70, 2),
+  new Refrigerante ("Fanta", "Uva", 7.00, 2),
+  new Refrigerante ("Fanta", "Laranja", 7.00, 2),
+  new Refrigerante ("Sprite", "Limão", 5.00, 2),
+  new Refrigerante ("Kuat", "Guaraná", 5.50, 2),
+  new Agua ("Crystal", "Mineral", 2.00, 350),
+  new Agua ("Ibirá", "Mineral", 1.50, 350),
+  new Agua ("Minalba", "Mineral", 1.65, 350),
+  new Agua ("Cristal", "Água com gás", 2.50, 350),
+  new Agua ("Bioleve", "Água com gás", 2.75, 350)
+];
 
 class Cliente {
   constructor(
@@ -129,37 +176,61 @@ const clienteCinco = new Cliente(
 //Temos que ter a opção de acrescentar mais itens e a opção de remover
 //carrinho está vazio pois pedimos ao cliente que adicione os itens que deseja
 
-let carrinho = [];
-let item;
+// let carrinho = [];
+// let item;
 
 //está funcionando
-function adicionar() {
+//  function adicionar() {
+//    do {
+//     item = parseInt(
+//        prompt(
+//          "Digite o número da opção que você deseja (1-27) Digite 0 para sair"
+//        )
+//      );
+//      if (item === 1) {
+//        item = pipocaCaramelizada;
+//      } else if (item === 2) {
+//        item = pipocaAmanteigada;
+//      } else if (item === 3) {
+//        item = pipocaBacon;
+//      } else if (item === 4) {
+//        item = pipocaNinho;
+//      }
+//      carrinho.push(item);
+//    } while (item !== 0);
+
+//    carrinho.splice(carrinho.length - 1, 1);
+//    console.log("Esses são os itens no seu carrinho de compras: ");
+//    for (const item of carrinho) {
+//      if (item !== 0) {
+//        console.log(item.sabor + " R$ " + item.preco);
+//      }
+//    }
+//   totalCarrinho(carrinho);
+//  }
+
+let carrinho = [];
+
+ function adicionar() {
+  let item;
   do {
-    item = parseInt(
-      prompt(
-        "Digite o número da opção que você deseja, 1 - 2 - 3 - 4. Digite 0 para sair"
-      )
-    );
-    if (item === 1) {
-      item = pipocaCaramelizada;
-    } else if (item === 2) {
-      item = pipocaAmanteigada;
-    } else if (item === 3) {
-      item = pipocaBacon;
-    } else if (item === 4) {
-      item = pipocaNinho;
-    }
-    carrinho.push(item);
+   item = parseInt(prompt("Digite o número da opção que você deseja de 1 a 27 Digite 0 para sair" ));
+
+      if (item > 0 && item <= bebidasDisponiveis.length) {
+        let opcao = bebidasDisponiveis[item - 1];
+          carrinho.push(opcao);
+          console.log(`${opcao.marca} ${opcao.tipo ? opcao.tipo : opcao.sabor} Preço R$: ${opcao.preco}`);
+      } else if (item !== 0) {
+      console.log("Intes inválidos");
+      }
   } while (item !== 0);
 
-  carrinho.splice(carrinho.length - 1, 1);
   console.log("Esses são os itens no seu carrinho de compras: ");
-  for (const item of carrinho) {
-    if (item !== 0) {
-      console.log(item.sabor + " R$ " + item.preco);
-    }
+  for (let i = 0; i < carrinho.length; i++) {
+   let opcao = carrinho[i] 
+    console.log(`${i + 1} ${opcao.marca} ${opcao.tipo ? opcao.tipo : opcao.sabor} R$ ${opcao.preco}`);
   }
-  totalCarrinho(carrinho);
+ totalCarrinho(carrinho);
 }
 
 //Função deletar desenvolvida pelo Gustavo Ferracioli - funcionando
