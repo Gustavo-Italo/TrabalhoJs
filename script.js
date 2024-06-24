@@ -214,21 +214,19 @@ let carrinho = [];
  function adicionar() {
   let item;
   do {
-   item = parseInt(prompt("Digite o número da opção que você deseja de 1 a 27 Digite 0 para sair" ));
+   item = parseInt(prompt("Digite o número da opção que você deseja de 1 a 27, Digite 0 para sair" ));
 
       if (item > 0 && item <= bebidasDisponiveis.length) {
         let opcao = bebidasDisponiveis[item - 1];
           carrinho.push(opcao);
           console.log(`${opcao.marca} ${opcao.tipo ? opcao.tipo : opcao.sabor} Preço R$: ${opcao.preco}`);
-      } else if (item !== 0) {
-      console.log("Intes inválidos");
       }
   } while (item !== 0);
 
-  console.log("Esses são os itens no seu carrinho de compras: ");
+  
   for (let i = 0; i < carrinho.length; i++) {
    let opcao = carrinho[i] 
-    console.log(`${i + 1} ${opcao.marca} ${opcao.tipo ? opcao.tipo : opcao.sabor} R$ ${opcao.preco}`);
+    console.log(`${i + 1} ${opcao.marca} ${opcao.tipo || opcao.sabor} R$ ${opcao.preco}`);
   }
  totalCarrinho(carrinho);
 }
