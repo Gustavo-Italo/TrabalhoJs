@@ -144,6 +144,9 @@ const clienteCinco = new Cliente(
   "Travessa dos Cães Nº2"
 );
 
+//desenvolvido em conjunto com a Deborah
+//procura os itens que estão dentro do array bebidasDisponiveis e adiciona no carrinho
+
 let carrinho = [];
 
  function adicionar() {
@@ -158,6 +161,8 @@ let carrinho = [];
           console.log(`${opcao.marca} ${opcao.tipo ? opcao.tipo : opcao.sabor} Preço R$: ${opcao.preco}`);
       }
   } while (item !== 0);
+
+  console.log("Itens adicionados no seu carrinho: ");
   for (let i = 0; i < carrinho.length; i++) {
    let opcao = carrinho[i] 
     console.log(`${i + 1} ${opcao.marca} ${opcao.tipo || opcao.sabor} R$ ${opcao.preco}`);
