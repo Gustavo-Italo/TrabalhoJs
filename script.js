@@ -233,25 +233,28 @@ let carrinho = [];
 
 //Função deletar desenvolvida pelo Gustavo Ferracioli - funcionando
 function deletar() {
-  if (carrinho.length === 0) {
-    console.log("O carrinho está vazio");
-    return;
-  }
-  let itemIndex = parseInt(
-    prompt("Digite o número do item que deseja excluir, começando do 1:")
-  );
-  if (itemIndex > 0 && itemIndex <= carrinho.length) {
-    let itemRemovido = carrinho.splice(itemIndex - 1, 1)[0];
-    console.log(`O item deletado foi: ${itemRemovido.sabor}`);
-  } else {
-    console.log("Item inválido.");
-  }
-  console.log("Itens no carrinho após a remoção:");
-  for (const item of carrinho) {
-    console.log(item.sabor + " R$ " + item.preco);
+  const carrinhoVazio = carrinho.length === 0;
+  carrinhoVazio ? console.log("O carrinho está vazio") : removerItem();
+
+  function removerItem() {
+    let itemIndex = parseInt(prompt("Digite o número do item que deseja excluir, começando do 1:"));
+    const indexValido = itemIndex > 0 && itemIndex <= carrinho.length;
+    indexValido ? removerEExibirItem(itemIndex) : console.log("Item inválido.");
   }
 
-  totalCarrinho(carrinho);
+  function removerEExibirItem(itemIndex) {
+    let itemRemovido = carrinho.splice(itemIndex - 1, 1)[0];
+    console.log(`O item deletado foi: ${itemRemovido.marca} ${itemRemovido.tipo || itemRemovido.sabor} R$ ${itemRemovido.preco}`);
+    exibirCarrinhoAtualizado();
+  }
+
+  function exibirCarrinhoAtualizado() {
+    console.log("Itens no carrinho após a remoção:");
+    for (const item of carrinho) {
+      console.log(`${i + 1} ${item.marca} ${item.tipo || item.sabor} R$ ${item.preco}`);
+    }
+    totalCarrinho(carrinho);
+  }
 }
 
 //desenvolvido em conjunto com o Gustavo Italo
