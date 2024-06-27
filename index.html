@@ -9,8 +9,8 @@
       integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="./css/reset.css"/>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -21,63 +21,75 @@
   </head>
   <body class="principal">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#"><img class="logo" src="./img/logo_neon.png" alt=""></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+      <a class="navbar-brand" href="#"
+        ><img class="logo" src="./img/logo_neon.png" alt=""
+      /></a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#conteudoNavbarSuportado"
+        aria-controls="conteudoNavbarSuportado"
+        aria-expanded="false"
+        aria-label="Alterna navegação"
+      >
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Bebidas a Porta <span class="sr-only">(página atual)</span></a>
+            <a class="nav-link" href="#"
+              >Bebidas a Porta <span class="sr-only">(página atual)</span></a
+            >
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+          <input
+            class="form-control mr-sm-2"
+            type="search"
+            placeholder="Pesquisar"
+            aria-label="Pesquisar"
+          />
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+            Pesquisar
+          </button>
         </form>
       </div>
     </nav>
     <section class="produtos">
       <ul class="produtos__lista">
         <li class="produtos__card">
-            <p>Cervejas</p>
+          <p>Cervejas</p>
         </li>
-        <li class="produtos__card">
-            Vinhos
-        </li>
-        <li class="produtos__card">
-            Refrigerantes
-        </li>
-        <li class="produtos__card">
-            Água
-        </li>
-        <li class="produtos__card">
-            Destilados
-        </li>
+        <li class="produtos__card">Vinhos</li>
+        <li class="produtos__card">Refrigerantes</li>
+        <li class="produtos__card">Água</li>
+        <li class="produtos__card">Destilados</li>
       </ul>
     </section>
     <section class="ofertas">
-      <div class="card" style="width: 14rem;">
-        <img class="card-img-top img-cerva" src="./img/corona.jpg" alt="Imagem de capa do card">
+      <div class="card" style="width: 14rem">
+        <img
+          class="card-img-top img-cerva"
+          src="./img/corona.jpg"
+          alt="Imagem de capa do card"
+        />
         <div class="card-body">
           <h5 class="card-title">Corona extra 355ml</h5>
-          <button onclick="adicionar()">
-            adicionar
-          </button>
+          <button onclick="adicionar()">adicionar</button>
           <p class="contador">0</p>
           <button onclick="deletar()">deletar</button>
         </div>
       </div>
     </section>
-    <section class="destaques">
-
+    <section class="produtos">
+      <!--aqui ficam os cards gerados pela function-->
     </section>
-    <section class="footer">
+    <section class="destaques"></section>
+    <section class="footer"></section>
 
-    </section>
-    
-   
     <script src="./script.js"></script>
+    <script src="./cards.js"></script> 
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
