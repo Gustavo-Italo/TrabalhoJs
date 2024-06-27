@@ -274,3 +274,7 @@ function totalCarrinho(objeto) {
 //   totalCarrinho(carrinho);
 //  }
 // const produtos = [ { nome: 'Produto 1', descricao: 'Descrição do Produto 1', preco: 50.00, imagem: 'caminho/para/imagem1.jpg' }
+
+
+//Temos que melhorar essa parte também, acredito que nossos objetos precisam ter um campo para quantidade,
+// e também a possibilidade da pessoa digitar quantos quer (acho que isso é mais complexo)
