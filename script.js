@@ -202,6 +202,9 @@ function totalCarrinho(objeto) {
     return (acumulador += valorAtual.preco);
   }, 0);
   console.log("Valor total: R$ " + total.toFixed(2));
+
+  const valorTotalElemento = document.getElementById('valor-total'); // atualiza o elemento html que mostra o valor total
+    valorTotalElemento.textContent = "Valor Total: R$ " + total.toFixed(2);
 }
 
  // new Cerveja ("Brahma", "Brasil", "Pilsen", 3.10, 350),
