@@ -18,9 +18,6 @@ function filtrarCategoria(categoria) {
         case 'Água':
             categoriaClasse = 'Agua';
             break;
-        case 'Destilado':
-            categoriaClasse = 'Destilado';
-            break;
         default:
             categoriaClasse = '';
     }

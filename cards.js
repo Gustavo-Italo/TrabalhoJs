@@ -18,7 +18,7 @@ function gerarCards(categoria = '') {
 
             const cardTitle = document.createElement('h5');
             cardTitle.className = 'card-title';
-            cardTitle.textContent = `${bebida.marca} ${bebida.tipo || bebida.sabor}`;
+            cardTitle.textContent = `${bebida.marca} ${bebida.tipo || bebida.sabor} R$ ${bebida.preco}`;
 
             const addButton = document.createElement('button');
             addButton.textContent = 'adicionar';
@@ -45,7 +45,7 @@ function gerarCards(categoria = '') {
     });
 }
 
-// Mantenha as funções de adicionar, deletar e atualizar carrinho
+
 function adicionarItemAoCarrinho(index) {
     const item = bebidasDisponiveis[index];
     carrinho.push(item);
