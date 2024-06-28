@@ -45,7 +45,6 @@ function gerarCards(categoria = '') {
     });
 }
 
-
 function adicionarItemAoCarrinho(index) {
     const item = bebidasDisponiveis[index];
     carrinho.push(item);
@@ -73,31 +72,10 @@ function atualizarCarrinho() {
     totalCarrinho(carrinho);
 }
 
-function adicionarItemAoCarrinho(index) {
-    carrinho.push(bebidasDisponiveis[index]);
-    console.log(`Adicionado: ${bebidasDisponiveis[index].marca} ${bebidasDisponiveis[index].tipo || bebidasDisponiveis[index].sabor}`);
-    atualizarCarrinho();
-}
-
-function deletarItemDoCarrinho(index) {
-    const item = bebidasDisponiveis[index];
-    const itemIndex = carrinho.findIndex(carrinhoItem => carrinhoItem.marca === item.marca && carrinhoItem.tipo === item.tipo && carrinhoItem.sabor === item.sabor);
-// aqui precisamos atualizar a função para reduzir do contador da quantidade total
-    if (itemIndex !== -1) {
-        carrinho.splice(itemIndex, 1);
-        console.log(`Deletado: ${item.marca} ${item.tipo || item.sabor}`);
-        atualizarCarrinho();
-    } else {
-        console.log('Item não encontrado no carrinho');
-    }
-}
-
-function atualizarCarrinho() {
-    console.log("Itens no carrinho:");
-    carrinho.forEach(item => {
-        console.log(`${item.marca} ${item.tipo || item.sabor} R$ ${item.preco}`);
-    });
-    totalCarrinho(carrinho);
+function totalCarrinho(objeto) {
+    const total = objeto.reduce((acumulador, valorAtual) => acumulador + valorAtual.preco, 0);
+    console.log("Valor total: R$ " + total.toFixed(2));
+    document.getElementById('valor-total').textContent = "Valor Total: R$ " + total.toFixed(2);
 }
 
 gerarCards();

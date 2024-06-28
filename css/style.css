@@ -55,7 +55,9 @@
     align-content: center;
     text-align: center;
 }
-
+.filtros_card:hover{
+    background-color: rgb(253, 207, 137);
+}
 .card {
     flex: 1 1 14rem;
     max-width: 14rem; 
