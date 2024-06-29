@@ -5,25 +5,26 @@ class Cerveja {
     this.tipo = tipo;
     this.preco = preco;
     this.peso = peso;
-    this.img = img
+    this.img = img;
   }
 }
 
-const brahmaTradLata = new Cerveja ("Brahma", "Brasil", "Pilsen", 3.10, 350);
-const brahmaTradLong = new Cerveja ("Brahma", "Brasil", "Pilsen", 4.79, 355);
-const coronaExtraLong = new Cerveja ("Corona", "México", "American Lager", 5.99, 330);
-const antarcticaTradLata = new Cerveja ("Artarctica", "Brasil", "Pilsen", 3.10, 350);
-const antarcticaTradLong = new Cerveja ("Antarctica", "Brasil", "Pilsen", 4.79, 355);
-const spatenLong = new Cerveja ("Spaten", "Alemanha", "Munich Helles", 5.99, 355);
-const spaten600 = new Cerveja ("Spaten", "Alemanha", "Munich Helles", 8.89, 600);
+const brahmaTradLata = new Cerveja ("Brahma", "Brasil", "Pilsen", 3.10, 350, "./img/brahma_lata.png");
+const brahmaTradLong = new Cerveja ("Brahma", "Brasil", "Pilsen", 4.79, 355, "./img/brahma_ln.png");
+const coronaExtraLong = new Cerveja ("Corona", "México", "American Lager", 5.99, 330, "./img/corona.jpg");
+const antarcticaTradLata = new Cerveja ("Artarctica", "Brasil", "Pilsen", 3.10, 350, "./img/antartica_lata.png");
+const antarcticaTradLong = new Cerveja ("Antarctica", "Brasil", "Pilsen", 4.79, 355, "./img/antartica_ln.png");
+const spatenLong = new Cerveja ("Spaten", "Alemanha", "Munich Helles", 5.99, 355, "./img/spaten_lata.jpeg");
+const spaten600 = new Cerveja ("Spaten", "Alemanha", "Munich Helles", 8.89, 600, "./img/spaten_600.jpeg");
 
 class Vinho {
-  constructor (marca, origem, tipo, preco, peso) {
+  constructor (marca, origem, tipo, preco, peso, img) {
     this.marca = marca;
     this.origem = origem;
     this.tipo = tipo;
     this.preco = preco;
     this.peso = peso;
+    this.img = img;
   }
 }
 
