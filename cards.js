@@ -9,7 +9,7 @@ function gerarCards(categoria = '') {
             card.style.width = '14rem';
 
             const img = document.createElement('img');
-            img.className = 'card-img-top img-cerva';
+            img.className = 'img-card';
             img.src = bebida.img;
             img.alt = `Imagem de ${bebida.marca} ${bebida.tipo || bebida.sabor}`;
 
@@ -21,7 +21,8 @@ function gerarCards(categoria = '') {
             cardTitle.textContent = `${bebida.marca} ${bebida.tipo || bebida.sabor} R$ ${bebida.preco}`;
 
             const addButton = document.createElement('button');
-            addButton.textContent = 'adicionar';
+            addButton.textContent = '+';
+            addButton.className = 'card-button';
             addButton.onclick = () => adicionarItemAoCarrinho(index);
 
             const contador = document.createElement('p');
@@ -29,7 +30,8 @@ function gerarCards(categoria = '') {
             contador.textContent = '0';
 
             const deleteButton = document.createElement('button');
-            deleteButton.textContent = 'deletar';
+            deleteButton.textContent = '-';
+            deleteButton.className = 'card-button';
             deleteButton.onclick = () => deletarItemDoCarrinho(index);
 
             cardBody.appendChild(cardTitle);
