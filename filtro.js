@@ -2,6 +2,7 @@ document.getElementById('categoria-cerveja').addEventListener('click', () => fil
 document.getElementById('categoria-vinho').addEventListener('click', () => filtrarCategoria('Vinho'));
 document.getElementById('categoria-refrigerante').addEventListener('click', () => filtrarCategoria('Refrigerante'));
 document.getElementById('categoria-agua').addEventListener('click', () => filtrarCategoria('Água'));
+document.getElementById('categoria-todas').addEventListener('click', () => filtrarCategoria('Todas'))
 
 function filtrarCategoria(categoria) {
     let categoriaClasse;
@@ -17,6 +18,9 @@ function filtrarCategoria(categoria) {
             break;
         case 'Água':
             categoriaClasse = 'Agua';
+            break;
+        case 'Todas':
+            categoriaClasse = '';
             break;
         default:
             categoriaClasse = '';

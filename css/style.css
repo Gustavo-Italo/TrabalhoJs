@@ -106,6 +106,7 @@ body {
 } 
 .filtros_card img {
     margin-top: 0.5rem;
+    width: 70px;
 }
 
 .filtros_card:hover{
