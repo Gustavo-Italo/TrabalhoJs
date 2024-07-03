@@ -5,7 +5,7 @@ body {
 .principal {
     height: 100vh;
     display: grid;
-    grid-template-columns: 100vw;
+    grid-template-columns: 1fr;
     grid-template-rows: auto auto auto auto;
     grid-template-areas: "cabecalho"
     "produtos"
@@ -149,3 +149,6 @@ body {
     box-shadow: 1px 1.5px 5px rgb(163, 167, 179);
 }
 
+.card-button:hover {
+    background-color: #0a5483;
+}

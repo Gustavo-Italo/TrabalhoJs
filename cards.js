@@ -20,25 +20,25 @@ function gerarCards(categoria = '') {
             cardTitle.className = 'card-title';
             cardTitle.textContent = `${bebida.marca} ${bebida.tipo || bebida.sabor} R$ ${bebida.preco}`;
 
-            const addButton = document.createElement('button');
-            addButton.textContent = '+';
-            addButton.className = 'card-button';
-            addButton.onclick = () => adicionarItemAoCarrinho(index);
-
-            const contador = document.createElement('p');
-            contador.className = 'contador';
-            contador.textContent = '0';
-
             const deleteButton = document.createElement('button');
             deleteButton.textContent = '-';
             deleteButton.className = 'card-button';
             deleteButton.onclick = () => deletarItemDoCarrinho(index);
 
-            cardBody.appendChild(cardTitle);
-            cardBody.appendChild(addButton);
-            cardBody.appendChild(contador);
-            cardBody.appendChild(deleteButton);
+            const contador = document.createElement('p');
+            contador.className = 'contador';
+            contador.textContent = '0';
 
+            const addButton = document.createElement('button');
+            addButton.textContent = '+';
+            addButton.className = 'card-button';
+            addButton.onclick = () => adicionarItemAoCarrinho(index);
+
+            cardBody.appendChild(cardTitle);
+            cardBody.appendChild(deleteButton);
+            cardBody.appendChild(contador);
+            cardBody.appendChild(addButton);
+            
             card.appendChild(img);
             card.appendChild(cardBody);
 
