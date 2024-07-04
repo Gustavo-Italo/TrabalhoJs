@@ -78,6 +78,10 @@ const bebidasDisponiveis = [
   brahmaTradLata, brahmaTradLong, coronaExtraLong, antarcticaTradLata, antarcticaTradLong, spatenLong, spaten600, chacChacBranco, chacChacTinto, trapicheTinto, periquitaRose, periquitaTinto, novecentoTinto, santaHelenaRose, espumanteBrutSalton, espumanteMoscatelSalton, cocaCola, guaranaAntarctica, pepsi, fantaUva, fantaLaranja, sprite, kuat, crystal, ibira, minalba, cristal, bioleve
  ]; 
 
+ localStorage.setItem("bebidasDisponiveis", JSON.stringify(bebidasDisponiveis));
+
+ 
+
 
 let carrinho = [];
 

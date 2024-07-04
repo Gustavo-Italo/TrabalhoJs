@@ -1,0 +1,214 @@
+[
+    {
+        "marca": "Brahma",
+        "origem": "Brasil",
+        "tipo": "Pilsen",
+        "preco": 3.1,
+        "peso": 350,
+        "img": "./img/brahma_lata.png"
+    },
+    {
+        "marca": "Brahma",
+        "origem": "Brasil",
+        "tipo": "Pilsen",
+        "preco": 4.79,
+        "peso": 355,
+        "img": "./img/brahma_ln.png"
+    },
+    {
+        "marca": "Corona",
+        "origem": "México",
+        "tipo": "American Lager",
+        "preco": 5.99,
+        "peso": 330,
+        "img": "./img/corona_ln.png"
+    },
+    {
+        "marca": "Artarctica",
+        "origem": "Brasil",
+        "tipo": "Pilsen",
+        "preco": 3.1,
+        "peso": 350,
+        "img": "./img/antartica_lata.png"
+    },
+    {
+        "marca": "Antarctica",
+        "origem": "Brasil",
+        "tipo": "Pilsen",
+        "preco": 4.79,
+        "peso": 355,
+        "img": "./img/antartica_ln.png"
+    },
+    {
+        "marca": "Spaten",
+        "origem": "Alemanha",
+        "tipo": "Munich Helles",
+        "preco": 5.99,
+        "peso": 355,
+        "img": "./img/spaten_lata.jpeg"
+    },
+    {
+        "marca": "Spaten",
+        "origem": "Alemanha",
+        "tipo": "Munich Helles",
+        "preco": 8.89,
+        "peso": 600,
+        "img": "./img/spaten_600.jpeg"
+    },
+    {
+        "marca": "Chac Chac",
+        "origem": "Argentina",
+        "tipo": "Sauvignon Blanc",
+        "preco": 40.99,
+        "peso": 750,
+        "img": "./img/chacchac_souvignon.png"
+    },
+    {
+        "marca": "Chac Chac",
+        "origem": "Argentina",
+        "tipo": "Tinto Malbec",
+        "preco": 40.99,
+        "peso": 750,
+        "img": "./img/chacchac_tinto.png"
+    },
+    {
+        "marca": "Trapiche",
+        "origem": "Argentina",
+        "tipo": "Tinto Merlot",
+        "preco": 51.99,
+        "peso": 750,
+        "img": "./img/trapiche_tinto.png"
+    },
+    {
+        "marca": "Periquita",
+        "origem": "Portugal",
+        "tipo": "Rosé Touriga Nacional",
+        "preco": 69.99,
+        "peso": 750,
+        "img": "./img/periquita_rose.png"
+    },
+    {
+        "marca": "Periquita",
+        "origem": "Portugal",
+        "tipo": "Tinto Seco",
+        "preco": 79.99,
+        "peso": 750,
+        "img": "./img/periquita_seco.png"
+    },
+    {
+        "marca": "Concha Y Toro",
+        "origem": "Chile",
+        "tipo": "Tinto Carménère Reservado",
+        "preco": 35.99,
+        "peso": 750,
+        "img": "./img/conchaytoro_carmenere.png"
+    },
+    {
+        "marca": "Santa Helena",
+        "origem": "Chile",
+        "tipo": "Rosé Reservado Cabernet Sauvignon",
+        "preco": 41.19,
+        "peso": 750,
+        "img": "./img/santahelena_rose.png"
+    },
+    {
+        "marca": "Salton",
+        "origem": "Brasil",
+        "tipo": "Espumante Brut",
+        "preco": 43.99,
+        "peso": 750,
+        "img": "./img/salton_brute.png"
+    },
+    {
+        "marca": "Salton",
+        "origem": "Brasil",
+        "tipo": "Espumante Moscatel",
+        "preco": 43.99,
+        "peso": 750,
+        "img": "./img/salton_moscatel.png"
+    },
+    {
+        "marca": "Coca Cola",
+        "sabor": "Canela",
+        "preco": 7.5,
+        "peso": 2,
+        "img": "./img/cocacola.jpeg"
+    },
+    {
+        "marca": "Guaraná Antarctica",
+        "sabor": "Guaraná",
+        "preco": 8,
+        "peso": 2,
+        "img": "./img/guarana.jpeg"
+    },
+    {
+        "marca": "Pepsi",
+        "sabor": "Canela",
+        "preco": 7.7,
+        "peso": 2,
+        "img": "./img/pepsi_lata.png"
+    },
+    {
+        "marca": "Fanta",
+        "sabor": "Uva",
+        "preco": 7,
+        "peso": 2,
+        "img": "./img/fanta_uva.jpeg"
+    },
+    {
+        "marca": "Fanta",
+        "sabor": "Laranja",
+        "preco": 7,
+        "peso": 2,
+        "img": "./img/fanta_laranja.png"
+    },
+    {
+        "marca": "Sprite",
+        "sabor": "Limão",
+        "preco": 5,
+        "peso": 2,
+        "img": "./img/sprite_lata.png"
+    },
+    {
+        "marca": "Kuat",
+        "sabor": "Guaraná",
+        "preco": 5.5,
+        "peso": 2,
+        "img": "./img/kuat_lata.png"
+    },
+    {
+        "marca": "Crystal",
+        "sabor": "Mineral",
+        "preco": 2,
+        "peso": 350,
+        "img": "./img/crystal_mineral.png"
+    },
+    {
+        "marca": "Ibirá",
+        "sabor": "Mineral",
+        "preco": 1.5,
+        "peso": 500,
+        "img": "./img/ibira_mineral.png"
+    },
+    {
+        "marca": "Minalba",
+        "sabor": "Mineral",
+        "preco": 1.65,
+        "peso": 500,
+        "img": "./img/minalba_mineral.png"
+    },
+    {
+        "marca": "Cristal",
+        "sabor": "Água com gás",
+        "preco": 2.5,
+        "peso": 500,
+        "img": "./img/crystal_gas.png"
+    },
+    {
+        "marca": "Bioleve",
+        "sabor": "Água com gás",
+        "preco": 2.75,
+        "peso": 500,
+        "img": "./img/bioleve_gas.png"
+    }
+]
