@@ -152,3 +152,45 @@ body {
 .card-button:hover {
     background-color: #0a5483;
 }
+
+/* Estilos específicos para a página de configuração */
+.adm-container {
+    padding-top: 20px;
+  }
+  
+  .adm-img {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+  }
+  
+  .adm-table-body {
+    text-align: center;
+  }
+  
+  .table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f9f9f9;
+  }
+  
+  .table-striped tbody tr:nth-of-type(even) {
+    background-color: #e9ecef;
+  }
+  
+  .adm-new-product-row {
+    background-color: #dff0d8;
+  }
+  
+  .adm-new-product-row td {
+    padding: 8px;
+  }
+  
+  .adm-new-product-row select, 
+  .adm-new-product-row input {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 5px;
+  }
+  
+  .adm-new-product-actions {
+    text-align: right;
+  }
