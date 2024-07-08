@@ -47,11 +47,21 @@ function gerarCards(categoria = '') {
     });
 }
 
+function atualizarContador(index, valor) {
+    const card = document.querySelectorAll('.card')[index];
+    const contador = card.querySelector('.contador');
+    let contadorValor = parseInt(contador.textContent);
+    contadorValor += valor;
+    if (contadorValor < 0) contadorValor = 0;
+    contador.textContent = contadorValor;
+}
+
 function adicionarItemAoCarrinho(index) {
     const item = bebidasDisponiveis[index];
     carrinho.push(item);
     console.log(`Adicionado: ${item.marca} ${item.tipo || item.sabor}`);
     atualizarCarrinho();
+    atualizarContador(index, 1);
 }
 
 function deletarItemDoCarrinho(index) {
@@ -61,6 +71,7 @@ function deletarItemDoCarrinho(index) {
         carrinho.splice(itemIndex, 1);
         console.log(`Deletado: ${item.marca} ${item.tipo || item.sabor}`);
         atualizarCarrinho();
+        atualizarContador(index, -1);
     } else {
         console.log('Item não encontrado no carrinho');
     }
