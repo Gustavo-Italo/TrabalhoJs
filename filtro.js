@@ -29,3 +29,13 @@ function filtrarCategoria(categoria) {
 }
 
 gerarCards();
+
+// function filterProducts(produtos, categoria) {
+//     if (!categoria) {
+//       return produtos; // Retorna todos os produtos se a categoria estiver vazia
+//     }
+//     return produtos.filter(produto => 
+//       produto.categoria.toLowerCase().includes(categoria.toLowerCase())
+//     );
+//   }
+  

@@ -168,6 +168,11 @@ body {
     text-align: center;
   }
   
+  .table-striped thead th {
+    background-color: #e9ecef;
+    text-align: center;
+  }
+  
   .table-striped tbody tr:nth-of-type(odd) {
     background-color: #f9f9f9;
   }
@@ -194,3 +199,4 @@ body {
   .adm-new-product-actions {
     text-align: right;
   }
+  
