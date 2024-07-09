@@ -200,3 +200,14 @@ body {
     text-align: right;
   }
   
+  /* Página do carrinho */
+  .input-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-group input {
+  width: 50px;
+  text-align: center;
+}

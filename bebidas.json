@@ -16,7 +16,8 @@
         "tipo": "Pilsen",
         "preco": 4.79,
         "peso": 355,
-        "img": "./img/brahma_ln.png"
+        "img": "./img/brahma_ln.png",
+        "qnt": 0
     },
     {
         "marca": "Corona",
@@ -160,7 +161,7 @@
     },
     {
         "marca": "Coca Cola",
-        "categoria": "refrigerantes",
+        "categoria": "refrigerante",
         "sabor": "Canela",
         "preco": 7.5,
         "peso": 2,
@@ -169,7 +170,7 @@
     },
     {
         "marca": "Guaraná Antarctica",
-        "categoria": "refrigerantes",
+        "categoria": "refrigerante",
         "sabor": "Guaraná",
         "preco": 8,
         "peso": 2,
@@ -178,7 +179,7 @@
     },
     {
         "marca": "Pepsi",
-        "categoria": "refrigerantes",
+        "categoria": "refrigerante",
         "sabor": "Canela",
         "preco": 7.7,
         "peso": 2,
@@ -187,7 +188,7 @@
     },
     {
         "marca": "Fanta",
-        "categoria": "refrigerantes",
+        "categoria": "refrigerante",
         "sabor": "Uva",
         "preco": 7,
         "peso": 2,
@@ -196,7 +197,7 @@
     },
     {
         "marca": "Fanta",
-        "categoria": "refrigerantes",
+        "categoria": "refrigerante",
         "sabor": "Laranja",
         "preco": 7,
         "peso": 2,
@@ -205,7 +206,7 @@
     },
     {
         "marca": "Sprite",
-        "categoria": "refrigerantes",
+        "categoria": "refrigerante",
         "sabor": "Limão",
         "preco": 5,
         "peso": 2,
@@ -214,7 +215,7 @@
     },
     {
         "marca": "Kuat",
-        "categoria": "refrigerantes",
+        "categoria": "refrigerante",
         "sabor": "Guaraná",
         "preco": 5.5,
         "peso": 2,
@@ -223,7 +224,7 @@
     },
     {
         "marca": "Crystal",
-        "categoria": "refrigerantes",
+        "categoria": "agua",    
         "sabor": "Mineral",
         "preco": 2,
         "peso": 350,
@@ -232,7 +233,7 @@
     },
     {
         "marca": "Ibirá",
-        "categoria": "refrigerantes",
+        "categoria": "agua",
         "sabor": "Mineral",
         "preco": 1.5,
         "peso": 500,
@@ -241,7 +242,7 @@
     },
     {
         "marca": "Minalba",
-        "categoria": "refrigerantes",
+        "categoria": "agua",
         "sabor": "Mineral",
         "preco": 1.65,
         "peso": 500,
@@ -250,7 +251,7 @@
     },
     {
         "marca": "Cristal",
-        "categoria": "refrigerantes",
+        "categoria": "agua",
         "sabor": "Água com gás",
         "preco": 2.5,
         "peso": 500,
@@ -259,7 +260,7 @@
     },
     {
         "marca": "Bioleve",
-        "categoria": "refrigerantes",
+        "categoria": "agua",
         "sabor": "Água com gás",
         "preco": 2.75,
         "peso": 500,
