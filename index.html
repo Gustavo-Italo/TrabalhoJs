@@ -76,7 +76,29 @@
     <section class="produtos">
       <!--aqui ficam os cards gerados pela function-->
     </section>
-    <section class="destaques"></section>
+      <section class="container mt-5">
+      <h2>Simulador de Quantidade de Bebidas</h2>
+      <form id="simuladorForm">
+        <div class="form-group">
+          <label for="numeroCriancas">Número de Crianças:</label>
+          <input type="number" class="form-control" id="numeroCriancas" min="0" value="0">
+        </div>
+        <div class="form-group">
+          <label for="numeroAdultos">Número de Adultos:</label>
+          <input type="number" class="form-control" id="numeroAdultos" min="0" value="0">
+        </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="incluirCerveja">
+          <label class="form-check-label" for="incluirCerveja">Vai ter Cerveja</label>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="incluirVinho">
+          <label class="form-check-label" for="incluirVinho">Vai ter Vinho</label>
+        </div>
+        <button type="button" class="btn btn-primary mt-3" onclick="calcularBebidas()">Calcular</button>
+      </form>
+      <div id="resultadoSimulacao" class="mt-4"></div>
+    </section>
     <section class="footer">
       <a href="https://www.flaticon.com/br/icones-gratis/alcool" title="álcool ícones">Ícones criados por wanicon - Flaticon</a>
     </section>
@@ -84,6 +106,7 @@
     <script src="./script.js"></script>
     <script src="./cards.js"></script>
     <script src="./filtro.js"></script>
+    <script src="./simulador.js"></script>
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
