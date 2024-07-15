@@ -4,7 +4,7 @@
         "categoria": "cerveja", 
         "origem": "Brasil",
         "tipo": "Pilsen",
-        "preco": 3.10,
+        "preco": 3.09,
         "peso": 350,
         "img": "./img/brahma_lata.png",
         "qnt": 0
@@ -34,7 +34,7 @@
         "categoria": "cerveja",
         "origem": "Brasil",
         "tipo": "Pilsen",
-        "preco": 3.10,
+        "preco": 3.09,
         "peso": 350,
         "img": "./img/antartica_lata.png",
         "qnt": 0
@@ -163,7 +163,7 @@
         "marca": "Coca Cola",
         "categoria": "refrigerante",
         "sabor": "Canela",
-        "preco": 7.50,
+        "preco": 7.49,
         "peso": 350,
         "img": "./img/cocacola.jpeg",
         "qnt": 0
@@ -172,7 +172,7 @@
         "marca": "Guaraná Antarctica",
         "categoria": "refrigerante",
         "sabor": "Guaraná",
-        "preco": 8.00,
+        "preco": 8.67,
         "peso": 350,
         "img": "./img/guarana.jpeg",
         "qnt": 0
@@ -181,7 +181,7 @@
         "marca": "Pepsi",
         "categoria": "refrigerante",
         "sabor": "Canela",
-        "preco": 7.70,
+        "preco": 7.39,
         "peso": 350,
         "img": "./img/pepsi_lata.png",
         "qnt": 0
@@ -190,7 +190,7 @@
         "marca": "Fanta",
         "categoria": "refrigerante",
         "sabor": "Uva",
-        "preco": 7.00,
+        "preco": 4.49,
         "peso": 350,
         "img": "./img/fanta_uva.jpeg",
         "qnt": 0
@@ -199,7 +199,7 @@
         "marca": "Fanta",
         "categoria": "refrigerante",
         "sabor": "Laranja",
-        "preco": 7.00,
+        "preco": 7.99,
         "peso": 350,
         "img": "./img/fanta_laranja.png",
         "qnt": 0
@@ -208,7 +208,7 @@
         "marca": "Sprite",
         "categoria": "refrigerante",
         "sabor": "Limão",
-        "preco": 5.00,
+        "preco": 5.49,
         "peso": 350,
         "img": "./img/sprite_lata.png",
         "qnt": 0
@@ -217,7 +217,7 @@
         "marca": "Kuat",
         "categoria": "refrigerante",
         "sabor": "Guaraná",
-        "preco": 5.50,
+        "preco": 5.49,
         "peso": 350,
         "img": "./img/kuat_lata.png",
         "qnt": 0
@@ -226,7 +226,7 @@
         "marca": "Crystal",
         "categoria": "agua",    
         "sabor": "Mineral",
-        "preco": 2.00,
+        "preco": 2.39,
         "peso": 500,
         "img": "./img/crystal_mineral.png",
         "qnt": 0
@@ -235,7 +235,7 @@
         "marca": "Ibirá",
         "categoria": "agua",
         "sabor": "Mineral",
-        "preco": 1.50,
+        "preco": 3.55,
         "peso": 500,
         "img": "./img/ibira_mineral.png",
         "qnt": 0
@@ -253,7 +253,7 @@
         "marca": "Cristal",
         "categoria": "agua",
         "sabor": "Água com gás",
-        "preco": 2.50,
+        "preco": 2.49,
         "peso": 500,
         "img": "./img/crystal_gas.png",
         "qnt": 0
