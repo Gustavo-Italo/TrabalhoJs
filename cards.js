@@ -2,8 +2,6 @@ function gerarCards(categoria = '') {
   const produtosContainer = document.querySelector('.produtos');
   produtosContainer.innerHTML = '';
 
-  const quantidadesSalvas = JSON.parse(localStorage.getItem('quantidades')) || {};
-
   bebidasDisponiveis.forEach((bebida, index) => {
     if (categoria === '' || bebida.categoria === categoria) {
       const card = document.createElement('div');
@@ -20,7 +18,7 @@ function gerarCards(categoria = '') {
 
       const cardTitle = document.createElement('h5');
       cardTitle.className = 'card-title';
-      cardTitle.textContent =`${bebida.marca} ${bebida.tipo || bebida.sabor} R$ ${bebida.preco}`;
+      cardTitle.textContent = `${bebida.marca} ${bebida.tipo || bebida.sabor} R$ ${bebida.preco}`;
 
       const deleteButton = document.createElement('button');
       deleteButton.textContent = '-';
@@ -29,7 +27,7 @@ function gerarCards(categoria = '') {
 
       const contador = document.createElement('p');
       contador.className = 'contador';
-      contador.textContent = quantidadesSalvas[index] || '0';
+      contador.textContent = '0';
 
       const addButton = document.createElement('button');
       addButton.textContent = '+';
@@ -50,17 +48,12 @@ function gerarCards(categoria = '') {
 }
 
 function atualizarContador(index, valor) {
-  const quantidades = JSON.parse(localStorage.getItem('quantidades')) || {};
-  let contadorValor = quantidades[index] || 0;
-  contadorValor += valor;
-  if (contadorValor < 0) contadorValor = 0;
-
   const card = document.querySelectorAll('.card')[index];
   const contador = card.querySelector('.contador');
+  let contadorValor = parseInt(contador.textContent);
+  contadorValor += valor;
+  if (contadorValor < 0) contadorValor = 0;
   contador.textContent = contadorValor;
-
-  quantidades[index] = contadorValor;
-  localStorage.setItem('quantidades', JSON.stringify(quantidades));
 }
 
 function adicionarItemAoCarrinho(index) {
@@ -83,23 +76,12 @@ function deletarItemDoCarrinho(index) {
   const itemIndex = carrinho.findIndex(carrinhoItem => carrinhoItem.marca === item.marca && carrinhoItem.tipo === item.tipo && carrinhoItem.sabor === item.sabor);
   if (itemIndex !== -1) {
     carrinho[itemIndex].quantidade -= 1;
-    if (carrinho[itemIndex].quantidade <= 0) {
+    if (carrinho[itemIndex].quantidade === 0) {
       carrinho.splice(itemIndex, 1);
     }
     localStorage.setItem('carrinho', JSON.stringify(carrinho));
     atualizarCarrinho();
-
-    const quantidades = JSON.parse(localStorage.getItem('quantidades')) || {};
-    if (quantidades[index] <= 0) {
-      quantidades[index] -= 1;
-    }
-    if (quantidades[index] > 0) {
-      delete quantidades[index];
-    }
-    localStorage.setItem('quantidades', JSON.stringify(quantidades));
-    
-    //atualizando o contador (não esta fazendo sentindo, mas se eu tirar dá bug no contador pq ele vai começar do 1)
-    atualizarContador(index, 0 );
+    atualizarContador(index, -1);
   } else {
     console.log('Item não encontrado no carrinho');
   }
