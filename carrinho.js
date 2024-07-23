@@ -1,3 +1,10 @@
+//volta para a página inicial
+const btnVoltar = document.querySelector('.btn-voltar');
+btnVoltar.addEventListener('click', (e) => {
+  history.go(-1);
+})
+
+
 document.addEventListener('DOMContentLoaded', () => {
   const listaCarrinho = document.getElementById('listaCarrinho');
   const totalValor = document.getElementById('totalValor');
@@ -64,3 +71,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
   renderizarCarrinho();
 });
+
+

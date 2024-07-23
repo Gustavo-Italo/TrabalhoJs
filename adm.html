@@ -13,24 +13,20 @@
   </head>
   <body>
     <header class="cabecalho">
-        <nav class="navbar navbar-expand-lg">
-          <a class="navbar-brand" href="#"></a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
-            <form class="form__pesquisar form-inline">
-              <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar" />
-              <button class="button__pesquisar" type="submit">Pesquisar</button>
-            </form>
-          </div>
+        <nav class="navbar-adm">
+          <a href="./index.html">
+            <img class="logo-adm" src="./img/logo.png" alt="Voltar para a Home"/>
+          </a>
+         
+            <h1 class="titulo-adm">Bebidas 
+            <br>à Porta</h1>
         </nav>
     </header>
     <main class="container adm-container mt-5">
-      <h1>Configuração de Produtos</h1>
-      <button id="adicionarProdutoBtn" class="btn btn-primary mb-3">Cadastrar Novo Produto</button>
+      <h1 class="titulo-adm">Configuração de Produtos</h1>
+      <button id="adicionarProdutoBtn" class="btn btn-primary">Cadastrar Novo Produto</button>
       <div id="newProductContainer" class="mb-3" style="display: none;">
-        <select id="categoriaSelect" class="form-control mb-3">
+        <select id="categoriaSelect" class="form-control mb-3 selecao">
           <option value="" selected disabled>Selecione uma categoria</option>
           <option value="cerveja">Cerveja</option>
           <option value="vinho">Vinho</option>

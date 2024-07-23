@@ -16,12 +16,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Poppins:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Bebidas a Porta</title>
+   
   </head>
   <body id="principal" class="principal">
     <header class="cabecalho">
-        <nav class="navbar navbar-expand-lg">
-          <a class="navbar-brand" href="#"
+        <nav class="navbar">
+          <!-- <a class="navbar-brand" href="#"
           ></a>
           <button
           class="navbar-toggler"
@@ -34,23 +36,13 @@
           >
           <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
-          <form class="form__pesquisar form-inline">
-            <input
-              class="form-control mr-sm-2"
-              type="search"
-              placeholder="Pesquisar"
-              aria-label="Pesquisar"
-            />
-            <button class="button__pesquisar" type="submit">
-              Pesquisar
-            </button>
-          </form>
+          <div class="collapse navbar-collapse" id="conteudoNavbarSuportado"> -->
+
           <section class="carrinho">
             <img class="carrinho-img" src="./img/shopping-cart.svg" alt="">
             <h5>Carrinho de Compras</h5>
             <div id="valor-total">Valor Total: R$ 0,00</div>
-            <button class="button__pesquisar"><a href="./carrinho.html">Ver Carrinho</a></button>
+            <button class="btn__basico"><a href="./carrinho.html">Ver Carrinho</a></button>
           </section>
         </div>
         </nav>
@@ -76,7 +68,13 @@
     <section class="produtos">
       <!--aqui ficam os cards gerados pela function-->
     </section>
-      <section class="container mt-5">
+
+    <button id="simulador">Clique para simular quantidades >
+    </button>
+    
+      <section class="modal">
+        <div class="modal__container">
+          <button class="btn-fechar">X</button>
       <h2>Simulador de Quantidade de Bebidas</h2>
       <form id="simuladorForm">
         <div class="form-group">
@@ -98,6 +96,8 @@
         <button type="button" class="btn btn-primary mt-3" onclick="calcularBebidas()">Calcular</button>
       </form>
       <div id="resultadoSimulacao" class="mt-4"></div>
+        </div>
+        
     </section>
     <section class="footer">
       <a href="https://www.flaticon.com/br/icones-gratis/alcool" title="álcool ícones">Ícones criados por wanicon - Flaticon</a>
@@ -107,6 +107,7 @@
     <script src="./cards.js"></script>
     <script src="./filtro.js"></script>
     <script src="./simulador.js"></script>
+   
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
