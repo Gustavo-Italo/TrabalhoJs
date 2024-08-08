@@ -2,6 +2,14 @@ body {
     font-family: 'Poppins', sans-serif;
     background-color: #0a5483;
 }
+
+a:hover {
+    text-decoration: none;
+}
+a:visited {
+    color: #f8f8ec;    
+}
+
 .principal {
     height: 100vh;
     display: grid;
@@ -22,9 +30,11 @@ body {
 .navbar {
     background-color: #aedd2b;
     max-height: 7vh;
-    
+    display: flex;
+    justify-content: flex-end;
 }
-.button__pesquisar {
+
+.btn__basico {
     width: 120px;
     height: 30px;
     background-color: #0a5483;
@@ -32,11 +42,17 @@ body {
     border: 0;
     border-radius: 8px;
 }
+
 .carrinho {
     display: flex;
     flex-direction: row;
     font-size: 0.9rem;
     align-items: center;
+    margin-right: 2rem;
+}
+
+.carrinho .btn__basico {
+    margin-left: 1.5rem;
 }
 
 .carrinho-img {
@@ -199,8 +215,66 @@ body {
   .adm-new-product-actions {
     text-align: right;
   }
+
+  .adm-container h1 {
+    margin-bottom: 2rem;
+    color:#e9ecef;
+    font-size: 1.75rem;
+}
+
+#adicionarProdutoBtn {
+    margin-bottom: 2rem;
+}
+
+.navbar-adm {
+    background-color: #aedd2b;
+    max-height: 5rem;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.logo-adm {
+    border-radius: 50%;
+    max-width: 3rem;
+    margin: 0.5rem 3rem 0.5rem 10rem;
+
+}
+
+.titulo-adm {
+    color:#0c0f4d;
+    font-family: "Berkshire Swash", serif;
+    font-size: 1.25rem;
+}
+
+.selecao {
+   max-width: 15rem;
+}
+
   
   /* Página do carrinho */
+.carrinho-interno {
+    display: flex;
+    flex-direction: row;
+    font-size: 0.9rem;
+    align-items: center;
+    margin-right: 3.5rem;
+    margin-left: 10rem;
+}
+
+.navbar-carrinho {
+    background-color: #aedd2b;
+    max-height: 5rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.logo-carrinho {
+    border-radius: 50%;
+    max-width: 3rem;
+    margin: 0.5rem 46rem 0.5rem 2.5rem;
+}
+
   .input-group {
   display: flex;
   justify-content: center;
@@ -210,6 +284,103 @@ body {
 .input-group input {
   width: 50px;
   text-align: center;
+}
+
+.btn-voltar {
+    width: 90px;
+    height: 30px;
+    text-align: center;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    background-color: rgb(255, 255, 255);
+    border: 0;
+    border-radius: 10px;
+}
+
+.carrinho__container {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+}
+
+.table {
+    width: 70%;
+    font-size: 1.1rem;
+}
+
+.total-container {
+    align-self: flex-end;
+    margin-right: 15rem;
+    color: #dff0d8;
+    font-size: 1.15rem;
+}
+
+.carrinho-de-compras {
+    margin: 2rem 2.5rem;
+    color: #e9ecef;
+    font-family: "Berkshire Swash", serif;
+    font-size: 2rem;
+}
+
+/*modal simulador*/
+
+#simulador {
+    margin-right: 20px;
+    position: fixed;
+    border-radius: 30px;
+    right: 0;
+    background: linear-gradient(90deg, #aedd2b 20%, #47b6f1 70%, rgb(3, 53, 67) 100%);
+    width: 200px;
+    height: 50px;
+    font-size: 0.95rem;
+    color: #dff0d8;
+    box-shadow: 10px 10px 52px 16px rgba(49,156,143,0.46);
+-webkit-box-shadow: 10px 10px 52px 16px rgba(49,156,143,0.46);
+-moz-box-shadow: 10px 10px 52px 16px rgba(49,156,143,0.46);
+    border: 3px solid #f8f8ec;
+    display: block;
+
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    margin-top: 5rem;
+    margin-left: 28rem;
+    width: 35%;
+    height: 65%;
+    overflow: auto;
+    background-color:#f8f8f1;
+    padding: 1.5rem;
+    color: #0a5483;
+    border-radius: 15px;
+    box-shadow: 1px 1px 5px 5px #02020272;
+}
+
+.modal__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.btn-fechar {
+    border-radius: 5px;
+    color: #dff0d8;
+    background-color: #066699;
+    width: 25px;
+    height: 25px;
+    border: 0;
+    align-self: flex-end;
+}
+.modal__container h2 {
+    font-size: 1.25rem;
+    margin: 0.5rem 0.5rem 2rem 0.5rem;
+}
+
+.modal__container label {
+    margin: 0.25rem 0 0.5rem 0;
 }
 /* CEP*/
 .resultado-simulacao {
@@ -222,4 +393,5 @@ body {
     background-color:rgb(206, 198, 198) ;
     padding: 10px;
 
-}
+
+

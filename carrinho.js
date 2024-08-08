@@ -1,6 +1,14 @@
+//volta para a página inicial
+const btnVoltar = document.querySelector('.btn-voltar');
+btnVoltar.addEventListener('click', (e) => {
+  history.go(-1);
+})
+
+
 document.addEventListener('DOMContentLoaded', () => {
   const listaCarrinho = document.getElementById('listaCarrinho');
   const totalValor = document.getElementById('totalValor');
+  const valorTotalDiv = document.getElementById('valor-total');
 
   // Carrega os itens do carrinho do localStorage
   let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
@@ -33,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     totalValor.textContent = total.toFixed(2);
+    valorTotalDiv.textContent = `Valor total: R$ ${total.toFixed(2)}`;
   }
 
   window.alterarQuantidade = (index, delta) => {
@@ -62,9 +71,8 @@ document.addEventListener('DOMContentLoaded', () => {
     renderizarCarrinho();
   };
 
-  
-})
-renderizarCarrinho();
+  renderizarCarrinho();
+});
   // Função consulta de CEP api correios
   function verificarEntrega() {
     const cep = document.getElementById('cep').value.trim();
@@ -95,3 +103,4 @@ renderizarCarrinho();
         alert('Erro ao consultar o CEP. Por favor, tente novamente.');
       });
   };
+

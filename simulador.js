@@ -1,3 +1,36 @@
+//função modal para o simulador, abre e fecha o modal container
+
+const modal = document.querySelector('.modal');
+const estiloAtual = modal.style.display;
+
+const abrirModal = () => {
+  
+  if (estiloAtual == 'block') {
+    modal.style.display = 'none'
+  } else {
+    modal.style.display = 'block'
+  }
+  return console.log('div criada')
+}
+
+const btnModal = document.querySelector('#simulador');
+btnModal.addEventListener('click', abrirModal)
+
+window.onclick = function(event) {
+  const janelaModal = document.querySelector('.modal')
+  if (event.target == janelaModal) {
+    abrirModal()
+  }
+}
+
+const btnFechar = document.querySelector(".btn-fechar");
+btnFechar.addEventListener('click', () => {
+  modal.style.display = "none";
+  console.log("janela fechada")
+})
+
+
+
 function calcularBebidas() {
     const numeroCriancas = parseInt(document.getElementById('numeroCriancas').value) || 0;
     const numeroAdultos = parseInt(document.getElementById('numeroAdultos').value) || 0;

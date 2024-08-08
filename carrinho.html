@@ -13,23 +13,20 @@
 </head>
 <body>
   <header class="cabecalho">
-      <nav class="navbar navbar-expand-lg">
-        <a class="navbar-brand" href="#"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
-          <a href="./index.html"><img src="./img/logo.png" alt="Voltar para a Home" height="35px" width="35px"></a>
-          <form class="form__pesquisar form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar" />
-            <button class="button__pesquisar" type="submit">Pesquisar</button>
-          </form>
-        </div>
+      <nav class="navbar-carrinho">
+          <a href="./index.html"><img class="logo-carrinho" src="./img/logo.png" alt="Voltar para a Home"></a>
+        <section class="carrinho-interno">
+          <img class="carrinho-img" src="./img/shopping-cart.svg" alt="">
+          <h5>Carrinho de Compras</h5>
+          <div id="valor-total">Valor Total: R$ 0,00</div>
+        </section>
       </nav>
   </header>
 
-  <main class="container adm-container mt-5">
-    <h1>Carrinho de Compras</h1>
+  <main>
+    <button class="btn-voltar"> < voltar</button>
+    <section class="carrinho__container mt-5">
+      <h2 class="carrinho-de-compras">Carrinho de Compras</h2>
     <table class="table table-striped">
       <thead>
         <tr>
@@ -53,6 +50,8 @@
     <div class="total-container">
       <h3>Total: R$ <span id="totalValor">0.00</span></h3>
     </div>
+    </section>
+    
   </main>
   <script src="./carrinho.js"></script>
 </body>
