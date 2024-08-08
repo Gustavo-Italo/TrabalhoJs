@@ -62,5 +62,36 @@ document.addEventListener('DOMContentLoaded', () => {
     renderizarCarrinho();
   };
 
-  renderizarCarrinho();
-});
+  
+})
+renderizarCarrinho();
+  // Função consulta de CEP api correios
+  function verificarEntrega() {
+    const cep = document.getElementById('cep').value.trim();
+    if (!cep) {
+      document.getElementById('resultadoSimulacao').innerHTML += `<p class="resultado-texto">'CEP não encontrado.'</p>`;
+      return;
+    }
+  
+    const url = `https://viacep.com.br/ws/${cep}/json/`;
+  
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        if (data.erro) {
+          document.getElementById('resultadoSimulacao').innerHTML += `<p>'CEP não encontrado.'</p>`;
+        } else {
+          // Verifique se a região está dentro das áreas de entrega
+          const areasDeEntrega = ['São Paulo', 'Rio de Janeiro', 'Belo Horizonte'];
+          if (areasDeEntrega.includes(data.localidade)) {
+            document.getElementById('resultadoSimulacao').innerHTML += `<p class="resultado-texto">Frete grátis para ${data.localidade} - ${data.uf}.</p>`;
+          } else {
+            document.getElementById('resultadoSimulacao').innerHTML += `<p class="resultado-texto">Desculpe, não fazemos entregas para ${data.localidade} - ${data.uf}.</p>`;
+          }
+        }
+      })
+      .catch(error => {
+        console.error('Erro ao consultar o CEP:', error);
+        alert('Erro ao consultar o CEP. Por favor, tente novamente.');
+      });
+  };

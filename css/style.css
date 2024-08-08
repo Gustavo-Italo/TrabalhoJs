@@ -211,3 +211,15 @@ body {
   width: 50px;
   text-align: center;
 }
+/* CEP*/
+.resultado-simulacao {
+    flex: 1;
+    margin: 10px 0px 10px 0px;
+    width: 33%;
+    
+  }
+.resultado-texto{
+    background-color:rgb(206, 198, 198) ;
+    padding: 10px;
+
+}
