@@ -5,7 +5,7 @@ function gerarCards(categoria = '') {
   bebidasDisponiveis.forEach((bebida, index) => {
     if (categoria === '' || bebida.categoria === categoria) {
       const card = document.createElement('div');
-      card.className = 'card';
+      card.className = 'card ';
       card.style.width = '14rem';
 
       const img = document.createElement('img');
