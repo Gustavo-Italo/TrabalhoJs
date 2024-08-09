@@ -2,89 +2,99 @@ function gerarCards(categoria = '') {
   const produtosContainer = document.querySelector('.produtos');
   produtosContainer.innerHTML = '';
 
-  bebidasDisponiveis.forEach((bebida, index) => {
-    if (categoria === '' || bebida.categoria === categoria) {
-      const card = document.createElement('div');
-      card.className = 'card ';
-      card.style.width = '14rem';
+  // Filtrar os produtos conforme a categoria selecionada
+  const produtosFiltrados = bebidasDisponiveis.filter(bebida => categoria === '' || bebida.categoria === categoria);
 
-      const img = document.createElement('img');
-      img.className = 'img-card';
-      img.src = bebida.img;
-      img.alt = `Imagem de ${bebida.marca} ${bebida.tipo || bebida.sabor}`;
+  produtosFiltrados.forEach((bebida) => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.style.width = '14rem';
 
-      const cardBody = document.createElement('div');
-      cardBody.className = 'card-body';
+    const img = document.createElement('img');
+    img.className = 'img-card';
+    img.src = bebida.img;
+    img.alt = `Imagem de ${bebida.marca} ${bebida.tipo || bebida.sabor}`;
 
-      const cardTitle = document.createElement('h5');
-      cardTitle.className = 'card-title';
-      cardTitle.textContent = `${bebida.marca} ${bebida.tipo || bebida.sabor} R$ ${bebida.preco}`;
+    const cardBody = document.createElement('div');
+    cardBody.className = 'card-body';
 
-      const deleteButton = document.createElement('button');
-      deleteButton.textContent = '-';
-      deleteButton.className = 'card-button';
-      deleteButton.onclick = () => deletarItemDoCarrinho(index);
+    const cardTitle = document.createElement('h5');
+    cardTitle.className = 'card-title';
+    cardTitle.textContent = `${bebida.marca} ${bebida.tipo || bebida.sabor} R$ ${bebida.preco}`;
 
-      const contador = document.createElement('p');
-      contador.className = 'contador';
-      contador.textContent = '0';
+    const deleteButton = document.createElement('button');
+    deleteButton.textContent = '-';
+    deleteButton.className = 'card-button';
+    deleteButton.onclick = () => {
+      deletarItemDoCarrinho(bebida);
+      atualizarContador(cardBody, bebida.qnt);
+    };
 
-      const addButton = document.createElement('button');
-      addButton.textContent = '+';
-      addButton.className = 'card-button';
-      addButton.onclick = () => adicionarItemAoCarrinho(index);
+    const contador = document.createElement('p');
+    contador.className = 'contador';
+    contador.textContent = bebida.qnt || 0;
 
-      cardBody.appendChild(cardTitle);
-      cardBody.appendChild(deleteButton);
-      cardBody.appendChild(contador);
-      cardBody.appendChild(addButton);
+    const addButton = document.createElement('button');
+    addButton.textContent = '+';
+    addButton.className = 'card-button';
+    addButton.onclick = () => {
+      adicionarItemAoCarrinho(bebida);
+      atualizarContador(cardBody, bebida.qnt);
+    };
 
-      card.appendChild(img);
-      card.appendChild(cardBody);
+    cardBody.appendChild(cardTitle);
+    cardBody.appendChild(deleteButton);
+    cardBody.appendChild(contador);
+    cardBody.appendChild(addButton);
 
-      produtosContainer.appendChild(card);
-    }
+    card.appendChild(img);
+    card.appendChild(cardBody);
+
+    produtosContainer.appendChild(card);
   });
 }
 
-function atualizarContador(index, valor) {
-  const card = document.querySelectorAll('.card')[index];
-  const contador = card.querySelector('.contador');
-  let contadorValor = parseInt(contador.textContent);
-  contadorValor += valor;
-  if (contadorValor < 0) contadorValor = 0;
-  contador.textContent = contadorValor;
-}
+function adicionarItemAoCarrinho(bebida) {
+  bebida.qnt = (bebida.qnt || 0) + 1;
 
-function adicionarItemAoCarrinho(index) {
-  const item = bebidasDisponiveis[index];
-  const itemExistente = carrinho.find(carrinhoItem => carrinhoItem.marca === item.marca && carrinhoItem.tipo === item.tipo && carrinhoItem.sabor === item.sabor);
+  const itemExistente = carrinho.find(carrinhoItem => 
+    carrinhoItem.marca === bebida.marca && 
+    carrinhoItem.tipo === bebida.tipo && 
+    carrinhoItem.sabor === bebida.sabor
+  );
+
   if (itemExistente) {
     itemExistente.quantidade += 1;
   } else {
-    item.quantidade = 1;
-    carrinho.push(item);
+    bebida.quantidade = 1;
+    carrinho.push(bebida);
   }
-  console.log(`Adicionado: ${item.marca} ${item.tipo || item.sabor}`);
+
   localStorage.setItem('carrinho', JSON.stringify(carrinho));
   atualizarCarrinho();
-  atualizarContador(index, 1);
 }
 
-function deletarItemDoCarrinho(index) {
-  const item = bebidasDisponiveis[index];
-  const itemIndex = carrinho.findIndex(carrinhoItem => carrinhoItem.marca === item.marca && carrinhoItem.tipo === item.tipo && carrinhoItem.sabor === item.sabor);
+function deletarItemDoCarrinho(bebida) {
+  const itemIndex = carrinho.findIndex(carrinhoItem => 
+    carrinhoItem.marca === bebida.marca && 
+    carrinhoItem.tipo === bebida.tipo && 
+    carrinhoItem.sabor === bebida.sabor
+  );
+
   if (itemIndex !== -1) {
     carrinho[itemIndex].quantidade -= 1;
-    if (carrinho[itemIndex].quantidade === 0) {
+    bebida.qnt -= 1; // Reduz a quantidade também no item atual
+    if (carrinho[itemIndex].quantidade <= 0) {
       carrinho.splice(itemIndex, 1);
     }
     localStorage.setItem('carrinho', JSON.stringify(carrinho));
     atualizarCarrinho();
-    atualizarContador(index, -1);
-  } else {
-    console.log('Item não encontrado no carrinho');
   }
+}
+
+function atualizarContador(cardBody, quantidade) {
+  const contador = cardBody.querySelector('.contador');
+  contador.textContent = quantidade || 0;
 }
 
 function atualizarCarrinho() {
@@ -100,3 +110,16 @@ function totalCarrinho(objeto) {
   console.log("Valor total: R$ " + total.toFixed(2));
   document.getElementById('valor-total').textContent = "Valor Total: R$ " + total.toFixed(2);
 }
+
+// Função de filtragem
+document.getElementById('categoria-cerveja').addEventListener('click', () => filtrarCategoria('cerveja'));
+document.getElementById('categoria-vinho').addEventListener('click', () => filtrarCategoria('vinho'));
+document.getElementById('categoria-refrigerante').addEventListener('click', () => filtrarCategoria('refrigerante'));
+document.getElementById('categoria-agua').addEventListener('click', () => filtrarCategoria('agua'));
+document.getElementById('categoria-todas').addEventListener('click', () => filtrarCategoria(''));
+
+function filtrarCategoria(categoria) {
+    gerarCards(categoria);
+}
+
+gerarCards();
