@@ -1,20 +1,25 @@
 //função modal para o simulador, abre e fecha o modal container
-
 const modal = document.querySelector('.modal');
 const estiloAtual = modal.style.display;
+
 
 const abrirModal = () => {
   
   if (estiloAtual == 'block') {
     modal.style.display = 'none'
+    console.log(estiloAtual)
   } else {
     modal.style.display = 'block'
   }
   return console.log('div criada')
+  
 }
 
 const btnModal = document.querySelector('#simulador');
-btnModal.addEventListener('click', abrirModal)
+const btnModatlEstilo = btnModal.style.display;
+const escondeBtn = () => {
+  btnModal.style.display = 'none'
+}
 
 window.onclick = function(event) {
   const janelaModal = document.querySelector('.modal')
@@ -23,10 +28,14 @@ window.onclick = function(event) {
   }
 }
 
+btnModal.addEventListener('click', abrirModal)
+btnModal.addEventListener('click', escondeBtn)
+
 const btnFechar = document.querySelector(".btn-fechar");
 btnFechar.addEventListener('click', () => {
   modal.style.display = "none";
   console.log("janela fechada")
+  btnModal.style.display = 'block'
 })
 
 

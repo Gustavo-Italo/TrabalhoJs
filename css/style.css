@@ -30,7 +30,6 @@ a:visited {
 
 .navbar {
     background-color: #aedd2b;
-    max-height: 7vh;
     display: flex;
     justify-content: flex-end;
 }
@@ -425,19 +424,117 @@ a:visited {
     }
     .card {
         flex: 1 1 14rem;
-  max-width: 12rem;
-  max-height: 18rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-shadow: 10px 5px 5px #020202;
-  border-radius: 20px;
-  border: 0;
-  margin: 1.5rem;
-  }
-  .img-card {
-    max-height: 30%;
-    margin-top: 0.9rem;
-    margin-bottom: 0.9rem;
-  }
+        max-width: 12rem;
+        max-height: 18rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 10px 5px 5px #020202;
+        border-radius: 20px;
+        border: 0;
+        margin: 1.5rem;
+        }
+    .img-card {
+        max-height: 40%;
+        margin-top: 0.9rem;
+        margin-bottom: 0.9rem;
+    }
+    
+    .card-button {
+        height: 26px;
+        width: 26px;
+    }
+    .card-title {
+        font-size: 0.9rem;
+    }
+
+    #simulador {
+        margin-right: 20px;
+        position: fixed;
+        border-radius: 30px;
+        right: 0;
+        background: linear-gradient(90deg, #aedd2b 20%, #47b6f1 70%, rgb(3, 53, 67) 100%);
+        width: 100px;
+        height: 50px;
+        font-size: 0.55rem;
+        color: #dff0d8;
+        box-shadow: 10px 10px 52px 16px rgba(49,156,143,0.46);
+    -webkit-box-shadow: 10px 10px 52px 16px rgba(49,156,143,0.46);
+    -moz-box-shadow: 10px 10px 52px 16px rgba(49,156,143,0.46);
+        border: 3px solid #f8f8ec;
+        display: block;
+    }
+    
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        margin-top: 6rem;
+        margin-left: 3rem;
+        width: 70vw;
+        height: 60%;
+        overflow: auto;
+        background-color:#f8f8f1;
+        padding: 1.5rem;
+        color: #0a5483;
+        border-radius: 15px;
+        box-shadow: 1px 1px 5px 5px #02020272;
+    }
+    
+    .modal__container {
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .btn-fechar {
+        border-radius: 5px;
+        color: #dff0d8;
+        background-color: #066699;
+        width: 20px;
+        height: 20px;
+        border: 0;
+        align-self: flex-end;
+    }
+    .modal__container h2 {
+        font-size: 0.9rem;
+        margin: 0.5rem 0.5rem 2rem 0.5rem;
+    }
+    #numeroCriancas {
+        width: 80px;
+        height: 28px;
+    }
+    #numeroAdultos {
+        width: 80px;
+        height: 28px;
+    }
+    .modal__container label {
+        font-size: 0.9rem;
+        margin: 0.25rem 0 0.5rem 0;
+    }
+    .btn-calculo {
+        font-size: 0.9rem;
+    }
+
+    .modal__container h3 {
+        font-size: 0.9rem;
+        text-align: center;
+        margin-top: 0.35rem;
+    } 
+    .modal__container p {
+        font-size: 0.9rem;
+        text-align: center;
+        margin-top: 0.35rem;
+    }
+
+    /* CEP*/
+    .resultado-simulacao {
+        flex: 1;
+        margin: 10px 0px 10px 0px;
+        width: 33%;
+        
+      }
+    .resultado-texto{
+        background-color:rgb(206, 198, 198) ;
+        padding: 10px;
+    }
 }
