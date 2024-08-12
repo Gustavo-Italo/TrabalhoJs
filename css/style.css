@@ -290,13 +290,9 @@ a:visited {
 .input-group {
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
-.input-group input {
-  width: 50px;
-  text-align: center;
-}
+
 
 .btn-voltar {
     width: 90px;
@@ -317,14 +313,32 @@ a:visited {
     align-content: center;
 }
 
-.table {
-    width: 70%;
+.carrinho-tabela {
+    width: 60vw;
     font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 50px;
+}
+
+.carrinho-tabela th {
+    height: 50px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.carrinho-tabela td {
+    height: 65px;
+    vertical-align: middle;    
+}
+
+ td .input-group {
+    width: 140px;
 }
 
 .total-container {
     align-self: flex-end;
-    margin-right: 15rem;
+    margin-right: 18rem;
+    margin-bottom: 5rem;
     color: #dff0d8;
     font-size: 1.15rem;
 }
@@ -395,6 +409,11 @@ a:visited {
     margin: 0.25rem 0 0.5rem 0;
 }
 /* CEP*/
+label {
+    color: #dff0d8;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
 .resultado-simulacao {
     flex: 1;
     margin: 10px 0px 10px 0px;
@@ -562,8 +581,9 @@ a:visited {
    .carrinho-interno {
     margin-right: 1.3rem;
    }
-    
 
+  
+  
     /* CEP*/
     .resultado-simulacao {
         flex: 1;
